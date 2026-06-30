@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soporte informático profesional para pequeñas empresas. Mantenimiento, redes, seguridad, copias de seguridad y automatización con IA." />
+  <meta name="keywords" content="soporte informático, mantenimiento informático, redes empresas, seguridad informática, automatización IA, técnico informático" />
+  <meta property="og:title" content="IT & Soluciones — Soporte Informático para Empresas" />
+  <meta property="og:description" content="Soluciones informáticas para que tu negocio funcione sin problemas." />
+  <meta property="og:type" content="website" />
+  <title>IT & Soluciones — Soporte Informático para Empresas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon"><i data-lucide="terminal"></i></span>
+        <span class="logo-text">IT <span class="logo-amp">&</span> Soluciones</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#por-que">Por qué nosotros</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="btn btn-primary nav-cta">Contactar</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Soporte técnico para pymes
+        </div>
+        <h1 class="hero-title">
+          Soluciones informáticas para que tu negocio
+          <span class="hero-highlight">funcione sin problemas</span>
+        </h1>
+        <p class="hero-subtitle">
+          Técnicos especializados con formación SMR y ASIR. Trato directo, precios claros y soluciones reales para que tu negocio nunca se detenga.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary btn-lg">
+            <i data-lucide="calendar-check"></i>
+            Solicitar revisión gratuita
+          </a>
+          <a href="#servicios" class="btn btn-ghost btn-lg">
+            Ver servicios
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">SMR<span class="stat-accent">+</span>ASIR</span>
+            <span class="stat-label">formación técnica</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100<span class="stat-accent">%</span></span>
+            <span class="stat-label">atención personalizada</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">24h<span class="stat-accent">*</span></span>
+            <span class="stat-label">respuesta garantizada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="t-title">diagnóstico.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd" id="terminalText"></span><span class="t-cursor">▋</span></div>
+          <div class="t-output" id="terminalOutput"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <i data-lucide="chevrons-down"></i>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SERVICIOS
+  ══════════════════════════════════ -->
+  <section class="section services-section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Lo que hacemos</span>
+        <h2 class="section-title">Servicios diseñados<br>para tu empresa</h2>
+        <p class="section-desc">Cubrimos todos los frentes tecnológicos que una pequeña empresa necesita para funcionar con seguridad y eficiencia.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal" data-delay="0">
+          <div class="sc-icon-wrap" style="--c: #0066CC;">
+            <i data-lucide="monitor-check"></i>
+          </div>
+          <h3>Soporte informático</h3>
+          <p>Resolución de incidencias, mantenimiento preventivo y asistencia remota o presencial. Tu equipo siempre operativo.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Mantenimiento preventivo</li>
+            <li><i data-lucide="check"></i> Soporte remoto y presencial</li>
+            <li><i data-lucide="check"></i> Instalación de software</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal" data-delay="100">
+          <div class="sc-icon-wrap" style="--c: #7C3AED;">
+            <i data-lucide="network"></i>
+          </div>
+          <h3>Redes y servidores</h3>
+          <p>Diseño, instalación y administración de redes LAN/Wi-Fi, VPN y servidores. Conectividad estable y segura.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Configuración de routers y switches</li>
+            <li><i data-lucide="check"></i> VPN para trabajo remoto</li>
+            <li><i data-lucide="check"></i> Administración de servidores</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal" data-delay="200">
+          <div class="sc-icon-wrap" style="--c: #059669;">
+            <i data-lucide="hard-drive"></i>
+          </div>
+          <h3>Copias de seguridad</h3>
+          <p>Estrategias de backup automatizadas locales y en la nube. Tus datos protegidos ante cualquier imprevisto.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Backup automático diario</li>
+            <li><i data-lucide="check"></i> Almacenamiento en la nube</li>
+            <li><i data-lucide="check"></i> Recuperación ante desastres</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal" data-delay="0">
+          <div class="sc-icon-wrap" style="--c: #DC2626;">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <h3>Seguridad informática</h3>
+          <p>Protección ante amenazas, configuración de antivirus, cortafuegos y auditorías básicas de seguridad.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Antivirus y EDR gestionado</li>
+            <li><i data-lucide="check"></i> Configuración de cortafuegos</li>
+            <li><i data-lucide="check"></i> Auditoría y formación</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal" data-delay="100">
+          <div class="sc-icon-wrap" style="--c: #D97706;">
+            <i data-lucide="bot"></i>
+          </div>
+          <h3>Automatización con IA</h3>
+          <p>Flujos de trabajo automáticos, integraciones entre herramientas y asistentes IA para ahorrar tiempo y recursos.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Automatización de tareas</li>
+            <li><i data-lucide="check"></i> Integración de herramientas</li>
+            <li><i data-lucide="check"></i> Chatbots y asistentes</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal" data-delay="200">
+          <div class="sc-icon-wrap" style="--c: #0891B2;">
+            <i data-lucide="megaphone"></i>
+          </div>
+          <h3>Gestión digital</h3>
+          <p>Creación y edición de contenido para redes sociales. Presencia digital profesional sin complicaciones.</p>
+          <ul class="sc-features">
+            <li><i data-lucide="check"></i> Diseño de publicaciones</li>
+            <li><i data-lucide="check"></i> Edición de vídeo básica</li>
+            <li><i data-lucide="check"></i> Estrategia de contenido</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       POR QUÉ ELEGIRNOS
+  ══════════════════════════════════ -->
+  <section class="section why-section" id="por-que">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-left reveal">
+          <span class="section-label light">Nuestra diferencia</span>
+          <h2 class="section-title light">Soporte técnico que entiende cómo funciona un negocio real</h2>
+          <p class="why-desc">No somos una gran empresa con tickets y tiempos de espera interminables. Somos técnicos especializados con formación sólida, atención directa y un compromiso real con tu negocio.</p>
+          <a href="#contacto" class="btn btn-white">Hablar con nosotros <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="why-right">
+          <div class="why-card reveal" data-delay="0">
+            <div class="wc-icon"><i data-lucide="zap"></i></div>
+            <div class="wc-content">
+              <h4>Atención rápida</h4>
+              <p>Respuesta en menos de 24 horas. Sabemos que cada hora sin sistemas funcionando tiene un coste para tu negocio.</p>
+            </div>
+          </div>
+          <div class="why-card reveal" data-delay="100">
+            <div class="wc-icon"><i data-lucide="building-2"></i></div>
+            <div class="wc-content">
+              <h4>Pensado para pymes</h4>
+              <p>Soluciones escalables y con precios adaptados a la realidad de una pequeña empresa. Sin sobredimensionar.</p>
+            </div>
+          </div>
+          <div class="why-card reveal" data-delay="200">
+            <div class="wc-icon"><i data-lucide="eye"></i></div>
+            <div class="wc-content">
+              <h4>Transparencia total</h4>
+              <p>Explicamos qué hacemos y por qué. Sin tecnicismos innecesarios. Presupuesto cerrado antes de empezar.</p>
+            </div>
+          </div>
+          <div class="why-card reveal" data-delay="300">
+            <div class="wc-icon"><i data-lucide="shield"></i></div>
+            <div class="wc-content">
+              <h4>Prevención activa</h4>
+              <p>Monitorización proactiva para detectar problemas antes de que afecten a tu actividad. Mejor prevenir que reparar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PROCESO
+  ══════════════════════════════════ -->
+  <section class="section process-section" id="proceso">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Cómo trabajamos</span>
+        <h2 class="section-title">Simple, claro y sin sorpresas</h2>
+        <p class="section-desc">Desde el primer contacto hasta la solución, seguimos un proceso estructurado que garantiza resultados.</p>
+      </div>
+
+      <div class="process-track">
+        <div class="process-line"></div>
+
+        <div class="process-step reveal" data-delay="0">
+          <div class="ps-number">01</div>
+          <div class="ps-icon"><i data-lucide="phone-call"></i></div>
+          <h4>Contacto inicial</h4>
+          <p>Nos cuentas tu situación. Sin compromiso. Analizamos si podemos ayudarte y cómo.</p>
+        </div>
+
+        <div class="process-step reveal" data-delay="150">
+          <div class="ps-number">02</div>
+          <div class="ps-icon"><i data-lucide="search"></i></div>
+          <h4>Análisis</h4>
+          <p>Revisamos tu infraestructura, identificamos problemas y oportunidades de mejora.</p>
+        </div>
+
+        <div class="process-step reveal" data-delay="300">
+          <div class="ps-number">03</div>
+          <div class="ps-icon"><i data-lucide="file-text"></i></div>
+          <h4>Propuesta</h4>
+          <p>Recibes un presupuesto detallado y comprensible. Sin letras pequeñas ni costes ocultos.</p>
+        </div>
+
+        <div class="process-step reveal" data-delay="450">
+          <div class="ps-number">04</div>
+          <div class="ps-icon"><i data-lucide="check-circle-2"></i></div>
+          <h4>Solución</h4>
+          <p>Ejecutamos el trabajo con mínima interrupción para ti. Seguimiento y soporte posterior incluidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ZONA CHATBOT IA (placeholder)
+  ══════════════════════════════════ -->
+  <section class="section chatbot-section" id="chatbot">
+    <div class="container">
+      <div class="chatbot-placeholder reveal">
+        <div class="cb-icon"><i data-lucide="bot"></i></div>
+        <div class="cb-text">
+          <h3>Asistente IA — Próximamente</h3>
+          <p>Estamos integrando un asistente inteligente para responder tus preguntas técnicas al instante, las 24 horas.</p>
+        </div>
+        <div class="cb-badge">En desarrollo</div>
+        <!-- 
+          ════════════════════════════════════════════════════
+          ZONA DE INTEGRACIÓN DE CHATBOT IA
+          ════════════════════════════════════════════════════
+          Para activar tu chatbot, sustituye este bloque por
+          el widget de tu plataforma elegida. Opciones:
+
+          1. Tidio:
+             <script src="//code.tidio.co/TU_ID.js" async></script>
+
+          2. Crisp:
+             window.$crisp=[];window.CRISP_WEBSITE_ID="TU_ID";
+             <script src="https://client.crisp.chat/l.js" async></script>
+
+          3. Botpress / Voiceflow / n8n + webhook personalizado:
+             Inserta el snippet que te proporcione la plataforma.
+
+          4. Claude API personalizado:
+             Conecta con la API de Anthropic y monta tu propio
+             chat usando fetch() a /v1/messages.
+          ════════════════════════════════════════════════════
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FORMULARIO DE CONTACTO
+  ══════════════════════════════════ -->
+  <section class="section contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-inner">
+
+        <div class="contact-info reveal">
+          <span class="section-label">Contacto</span>
+          <h2 class="section-title">Hablemos de<br>tu proyecto</h2>
+          <p>Cuéntanos tu situación y te respondemos en menos de 24 horas. La primera consulta es gratuita.</p>
+
+          <div class="contact-details">
+            <div class="cd-item">
+              <i data-lucide="mail"></i>
+              <!-- ✏️ CAMBIA por tu email real -->
+              <a href="mailto:gravitystudios@gmail.com">hola@itsoluciones.es</a>
+            </div>
+            <div class="cd-item">
+              <i data-lucide="phone"></i>
+              <!-- ✏️ CAMBIA por tu teléfono real -->
+              <a href="tel:+34600000000">+34 600 000 000</a>
+            </div>
+            <div class="cd-item">
+              <i data-lucide="map-pin"></i>
+              <!-- ✏️ CAMBIA por tu ubicación -->
+              <span>Galicia, España — Servicio remoto en toda España</span>
+            </div>
+            <div class="cd-item">
+              <i data-lucide="clock"></i>
+              <span>Lun–Vie 9:00–19:00 · Urgencias 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal" data-delay="150">
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+                <span class="form-error" id="err-nombre"></span>
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required />
+                <span class="form-error" id="err-email"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="servicio">Servicio que necesitas *</label>
+              <div class="select-wrap">
+                <select id="servicio" name="servicio" required>
+                  <option value="" disabled selected>Selecciona un servicio</option>
+                  <option value="soporte">Soporte informático</option>
+                  <option value="redes">Redes y servidores</option>
+                  <option value="backup">Copias de seguridad</option>
+                  <option value="seguridad">Seguridad informática</option>
+                  <option value="automatizacion">Automatización con IA</option>
+                  <option value="gestion-digital">Gestión digital</option>
+                  <option value="otro">Otro / No sé</option>
+                </select>
+                <i data-lucide="chevron-down" class="select-arrow"></i>
+              </div>
+              <span class="form-error" id="err-servicio"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="descripcion">Cuéntanos tu situación *</label>
+              <textarea id="descripcion" name="descripcion" rows="4" placeholder="Describe brevemente el problema o lo que necesitas..." required></textarea>
+              <span class="form-error" id="err-descripcion"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">
+                <i data-lucide="send"></i>
+                Enviar consulta
+              </span>
+              <span class="btn-loading" hidden>
+                <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="40" stroke-dashoffset="15"/></svg>
+                Enviando…
+              </span>
+            </button>
+
+            <p class="form-privacy">
+              <i data-lucide="lock"></i>
+              Tus datos están protegidos y solo se usarán para responderte.
+            </p>
+
+          </form>
+
+          <!-- Mensaje de éxito -->
+          <div class="form-success" id="formSuccess" hidden>
+            <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
+            <h3>¡Mensaje recibido!</h3>
+            <p>Te responderemos en menos de 24 horas. Gracias por contactarnos.</p>
+            <button class="btn btn-ghost" id="resetForm">Enviar otro mensaje</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">
+            <span class="logo-icon"><i data-lucide="terminal"></i></span>
+            <span class="logo-text">IT <span class="logo-amp">&</span> Soluciones</span>
+          </a>
+          <p>Soporte informático profesional para pequeñas empresas. Formación técnica, trato directo y soluciones reales.</p>
+          <div class="footer-socials">
+            <!-- ✏️ Añade/elimina redes según tus perfiles reales -->
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Soporte informático</a></li>
+            <li><a href="#servicios">Redes y servidores</a></li>
+            <li><a href="#servicios">Copias de seguridad</a></li>
+            <li><a href="#servicios">Seguridad</a></li>
+            <li><a href="#servicios">Automatización IA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#por-que">Por qué nosotros</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <!-- ✏️ Añade enlace a tu política de privacidad -->
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h5>Contacto directo</h5>
+          <a href="mailto:hola@itsoluciones.es" class="fc-item">
+            <i data-lucide="mail"></i> hola@itsoluciones.es
+          </a>
+          <a href="tel:+34600000000" class="fc-item">
+            <i data-lucide="phone"></i> +34 600 000 000
+          </a>
+          <a href="#contacto" class="btn btn-primary btn-sm" style="margin-top:1rem;">
+            Revisión gratuita
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> IT & Soluciones. Todos los derechos reservados.</p>
+        <p>Hecho con <i data-lucide="heart" style="width:14px;height:14px;color:#ef4444;vertical-align:middle;"></i> para pymes</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       BOTÓN WHATSAPP FLOTANTE
+  ══════════════════════════════════ -->
+  <!-- ✏️ Cambia el número (formato internacional sin +) y el mensaje predeterminado -->
+  <a href="https://wa.me/34600000000?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20vuestros%20servicios%20informáticos."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-tooltip">¿Hablamos por WhatsApp?</span>
+  </a>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Volver arriba">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
